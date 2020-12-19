@@ -9,10 +9,8 @@
       raw: test -e /usr/bin/python || ( yum -y update && yum install -y python-minimal)
 
     - name: Install python3
-      raw: yum install -y python3
+      raw: yum install -y python36 && yum install -y python36-devel && yum install -y python36-setuptools && easy_install-3.6 pip
 
-    - name: Install boto3 with 'pip3.8' executable
-      raw: yum install -y pip3
 
 # - name: Install HTTPD
 #   hosts: all
