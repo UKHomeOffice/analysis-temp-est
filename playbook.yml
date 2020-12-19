@@ -14,6 +14,27 @@
     - name: Install boto3
       raw: pip3 install boto3
 
+    - name: Create certificate folder structure
+      file:
+        path: /etc/letsencrypt/live
+        state: directory
+        recurse: yes
+        mode: 700
+
+    - name: Create expire script directory and file
+      copy:
+        src: scripts/
+        dest: /etc/letsencrypt/ssl_expire_script
+        mode: 700
+
+    - name: Create cronjob to run Tableau to S3 backup script every day at 7PM
+      cron:
+        name: Check Certificate Expiry Status
+        minute: 0
+        hour: 9
+        job: . /root/.bashrc && /bin/python3 /etc/letsencrypt/ssl_expire_script/cert_expiry_monitor.py
+
+
 
 # - name: Install HTTPD
 #   hosts: all
