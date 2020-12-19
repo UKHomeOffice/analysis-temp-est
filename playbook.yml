@@ -11,6 +11,9 @@
     - name: Install python3
       raw: yum install -y python3
 
+    - name: Install pip3 and boto3
+      raw:  yum -y update pip3 && yum install -y boto3
+
 
 # - name: Install HTTPD
 #   hosts: all
