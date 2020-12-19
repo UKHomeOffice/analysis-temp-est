@@ -12,10 +12,7 @@
       raw: yum install -y python3
 
     - name: Install boto3 with 'pip3.8' executable
-      pip:
-        name: bottle
-        executable: pip3.8
-
+      raw: yum install -y pip3
 
 # - name: Install HTTPD
 #   hosts: all
