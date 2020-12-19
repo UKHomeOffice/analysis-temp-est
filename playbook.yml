@@ -9,7 +9,7 @@
       raw: test -e /usr/bin/python || ( yum -y update && yum install -y python-minimal)
 
     - name: Install python3
-      raw: yum install -y python3-minimal
+      raw: yum install -y python3
 
 
 # - name: Install HTTPD
