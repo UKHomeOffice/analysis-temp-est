@@ -5,14 +5,14 @@ pipeline:
     environment:
     commands:
       - export HOME=/home/packer
-      # - packer validate packer.json
+      - packer validate packer.json
 
-  # inspect:
-  #   image: quay.io/ukhomeofficedigital/dq-packer-ansible
-  #   environment:
-  #   commands:
-  #     - export HOME=/home/packer
-  #     - packer inspect packer.json
+  inspect:
+    image: quay.io/ukhomeofficedigital/dq-packer-ansible
+    environment:
+    commands:
+      - export HOME=/home/packer
+      - packer inspect packer.json
   #
   # build:
   #   image: quay.io/ukhomeofficedigital/dq-packer-ansible
